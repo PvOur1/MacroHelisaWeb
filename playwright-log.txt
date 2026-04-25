@@ -1,0 +1,25 @@
+{"level":30,"time":"2025-08-30T19:17:14.686Z","pid":35660,"hostname":"Julian-Peña","msg":"Listening on 127.0.0.1:58348"}
+(node:35660) DeprecationWarning: Calling start() is no longer necessary. It can be safely omitted.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{"level":30,"time":"2025-08-30T19:17:14.773Z","pid":35660,"hostname":"Julian-Peña","msg":"Start of node method newBrowser"}
+{"level":30,"time":"2025-08-30T19:17:15.240Z","pid":35660,"hostname":"Julian-Peña","msg":"Adding browser to stack: chromium, version: 140.0.7339.16"}
+{"level":30,"time":"2025-08-30T19:17:15.243Z","pid":35660,"hostname":"Julian-Peña","msg":"End of node method newBrowser"}
+{"level":30,"time":"2025-08-30T19:17:15.242Z","pid":35660,"hostname":"Julian-Peña","msg":"Adding 0 contexts to browser"}
+{"level":30,"time":"2025-08-30T19:17:15.257Z","pid":35660,"hostname":"Julian-Peña","msg":"Start of node method newContext"}
+{"level":30,"time":"2025-08-30T19:17:15.258Z","pid":35660,"hostname":"Julian-Peña","msg":"Creating new context with options: {\"acceptDownloads\":true,\"bypassCSP\":false,\"forcedColors\":\"none\",\"ignoreHTTPSErrors\":true,\"javaScriptEnabled\":true,\"offline\":false,\"reducedMotion\":\"no-preference\",\"serviceWorkers\":\"allow\",\"viewport\":{\"width\":1366,\"height\":840}}"}
+{"level":30,"time":"2025-08-30T19:17:15.258Z","pid":35660,"hostname":"Julian-Peña","msg":"currentBrowser: {\"name\":\"chromium\",\"browser\":{\"_type\":\"Browser\",\"_guid\":\"browser@3545bfbab43bff74abd38c1ebbf73d8a\"},\"headless\":false,\"_contextStack\":[],\"id\":\"browser=ab35de0c-65c2-441a-aee4-8c668247b9cb\"}"}
+{"level":30,"time":"2025-08-30T19:17:15.259Z","pid":35660,"hostname":"Julian-Peña","msg":"Trace file: "}
+{"level":30,"time":"2025-08-30T19:17:15.302Z","pid":35660,"hostname":"Julian-Peña","msg":"Setting default timeout for context context=404a12c7-91d7-4ac9-953a-cad4aac60695 to 10000"}
+{"level":30,"time":"2025-08-30T19:17:15.303Z","pid":35660,"hostname":"Julian-Peña","msg":"End of node method newContext"}
+{"level":30,"time":"2025-08-30T19:17:15.303Z","pid":35660,"hostname":"Julian-Peña","msg":"Changed active context: context=404a12c7-91d7-4ac9-953a-cad4aac60695"}
+{"level":30,"time":"2025-08-30T19:17:15.315Z","pid":35660,"hostname":"Julian-Peña","msg":"Start of node method newPage"}
+{"level":30,"time":"2025-08-30T19:17:15.315Z","pid":35660,"hostname":"Julian-Peña","msg":"currentBrowser: {\"name\":\"chromium\",\"browser\":{\"_type\":\"Browser\",\"_guid\":\"browser@3545bfbab43bff74abd38c1ebbf73d8a\"},\"headless\":false,\"_contextStack\":[{\"id\":\"context=404a12c7-91d7-4ac9-953a-cad4aac60695\",\"c\":{\"_type\":\"BrowserContext\",\"_guid\":\"browser-context@661f3ae16913213b3d63b3b10a908343\"},\"pageStack\":[],\"options\":{\"acceptDownloads\":true,\"bypassCSP\":false,\"forcedColors\":\"none\",\"ignoreHTTPSErrors\":true,\"javaScriptEnabled\":true,\"offline\":false,\"reducedMotion\":\"no-preference\",\"serviceWorkers\":\"allow\",\"viewport\":{\"width\":1366,\"height\":840}},\"traceFile\":\"\"}],\"id\":\"browser=ab35de0c-65c2-441a-aee4-8c668247b9cb\"}"}
+{"level":30,"time":"2025-08-30T19:17:15.919Z","pid":35660,"hostname":"Julian-Peña","msg":"Video path: undefined"}
+{"level":30,"time":"2025-08-30T19:17:15.920Z","pid":35660,"hostname":"Julian-Peña","msg":"Changed active page"}
+{"level":30,"time":"2025-08-30T19:17:17.175Z","pid":35660,"hostname":"Julian-Peña","msg":"End of node method newPage"}
+{"level":30,"time":"2025-08-30T19:17:17.186Z","pid":35660,"hostname":"Julian-Peña","msg":"Start of node method getElementCount"}
+{"level":30,"time":"2025-08-30T19:17:17.187Z","pid":35660,"hostname":"Julian-Peña","msg":"Strict mode is disabled, return Locator: #DocumentKey in page."}
+{"level":30,"time":"2025-08-30T19:17:17.269Z","pid":35660,"hostname":"Julian-Peña","msg":"End of node method getElementCount"}
+{"level":30,"time":"2025-08-30T19:17:17.288Z","pid":35660,"hostname":"Julian-Peña","msg":"Start of node method closeAllBrowsers"}
+{"level":30,"time":"2025-08-30T19:17:17.332Z","pid":35660,"hostname":"Julian-Peña","msg":"Removed page=5198c29e-09b6-4028-8651-a6e0bc4a9cc2 from context=404a12c7-91d7-4ac9-953a-cad4aac60695 page stack"}
+{"level":30,"time":"2025-08-30T19:17:18.219Z","pid":35660,"hostname":"Julian-Peña","msg":"End of node method closeAllBrowsers"}
