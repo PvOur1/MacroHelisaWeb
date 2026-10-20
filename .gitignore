@@ -1,0 +1,47 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Local environment files
+.env
+.env.*
+!.env.example
+
+# PyInstaller outputs
+build/
+dist/
+*.spec
+installer-output/
+installer-build/
+pyinstaller-build.log
+
+# Logs and temporary files
+*.log
+logs/*
+!logs/.gitkeep
+*.tmp
+*.temp
+*.bak
+*.swp
+~$*
+
+# Test and tool caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
