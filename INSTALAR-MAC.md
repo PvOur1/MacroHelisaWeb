@@ -1,5 +1,11 @@
 # Crear e instalar CargueFacturas en macOS
 
+## Descargar el instalador ya compilado
+
+Las compilaciones correctas de GitHub Actions se publican en [Releases](https://github.com/PvOur1/MacroHelisaWeb/releases). Descarga `CargueFacturas-mac-arm64.dmg` para un Mac Apple Silicon, abre el DMG y arrastra la aplicación a Aplicaciones. No necesitas Python para usar esta descarga. Consulta abajo los permisos y las limitaciones de firma.
+
+## Compilar desde el código fuente
+
 La aplicación es de escritorio. Compila el instalador en un Mac del mismo tipo que el equipo de destino: Apple Silicon (arm64) o Intel (x86_64). PyInstaller no genera aplicaciones macOS desde Linux o Windows.
 
 1. Instala Python 3.12 desde https://www.python.org/downloads/macos/ (incluye Tkinter).
