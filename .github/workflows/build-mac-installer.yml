@@ -1,0 +1,71 @@
+name: Instalador macOS Apple Silicon
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [master]
+    paths:
+      - .github/workflows/build-mac-installer.yml
+      - build-installer-mac.command
+      - packaging/macos.spec
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: macos-15-arm64
+    timeout-minutes: 25
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          architecture: arm64
+      - name: Comprobar arquitectura
+        run: |
+          python -c 'import platform; assert platform.machine() == "arm64", platform.machine()'
+      - name: Crear y verificar DMG
+        run: bash build-installer-mac.command
+      - name: Comprobar arranque de la aplicación empaquetada
+        run: |
+          python - <<'PY'
+          import subprocess
+          from pathlib import Path
+          executable = Path('dist/CargueFacturas.app/Contents/MacOS/CargueFacturas').resolve()
+          with open('build/macos/startup.log', 'w+') as log:
+              process = subprocess.Popen([str(executable)], stdout=log, stderr=log)
+              try:
+                  try:
+                      result = process.wait(timeout=10)
+                  except subprocess.TimeoutExpired:
+                      print('La aplicación permanece abierta durante la comprobación de arranque.')
+                  else:
+                      log.seek(0)
+                      raise RuntimeError(f'La aplicación terminó antes de tiempo ({result}): {log.read()}')
+              finally:
+                  if process.poll() is None:
+                      process.terminate()
+                      try:
+                          process.wait(timeout=5)
+                      except subprocess.TimeoutExpired:
+                          process.kill()
+                          process.wait()
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: CargueFacturas-mac-arm64
+          path: installer-output/CargueFacturas-mac-arm64.dmg
+          if-no-files-found: error
+      - name: Publicar instalador descargable
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          gh release create "macos-build-${GITHUB_RUN_NUMBER}" \
+            installer-output/CargueFacturas-mac-arm64.dmg \
+            --target "$GITHUB_SHA" \
+            --title "CargueFacturas para Mac Apple Silicon (compilación ${GITHUB_RUN_NUMBER})" \
+            --notes 'Descarga el DMG y arrastra CargueFacturas a Aplicaciones. Requiere permisos de Accesibilidad y Grabación de pantalla. Esta compilación no tiene firma Developer ID ni notarización de Apple; macOS puede bloquear su apertura. La automatización sobre Helisa no se valida en CI.'
