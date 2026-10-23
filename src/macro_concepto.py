@@ -7,7 +7,7 @@ import time
 # PyInstaller no puede detectar Tcl/Tk en algunos entornos de Python. Al estar
 # congelada, la aplicación lleva sus librerías y las indica antes de importar
 # tkinter.
-if getattr(sys, "frozen", False):
+if getattr(sys, "frozen", False) and sys.platform == "win32":
     bundle_dir = Path(sys._MEIPASS)
     os.environ["TCL_LIBRARY"] = str(bundle_dir / "_tcl_data")
     os.environ["TK_LIBRARY"] = str(bundle_dir / "_tk_data")

@@ -5,6 +5,7 @@ __pycache__/
 
 # Virtual environments
 .venv/
+.venv-mac/
 venv/
 env/
 ENV/
@@ -18,6 +19,7 @@ ENV/
 build/
 dist/
 *.spec
+!packaging/macos.spec
 installer-output/
 installer-build/
 pyinstaller-build.log
